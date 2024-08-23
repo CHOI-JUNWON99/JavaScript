@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="draw">추첨</button>
+    <p id="number"></p>
+
+    <script>
+        const button = document.getElementById("draw")
+        const p = document.getElementById("number")
+
+        //console.log(Math.sqrt(4))
+        //console.log(Math.abs(-4))
+
+        // 1~11 사이의 랜덤숫자를 반환 원랜 0~1
+        let rn = Math.random()
+        //주어진 숫자에서 소수점 이하를 제거 반환
+        console.log(Math.floor(rn*10) + 1);
+
+        const MAX_NUM = 10;
+        const MIN_NUM = 1;
+        //주어진 숫자에서 소수점 이하를 제거 반환
+        console.log(Math.floor(rn*MAX_NUM) + MIN_NUM);
+
+        button.addEventListener("click",function(){
+            p.textContent = Math.floor(Math.random() * MAX_NUM) + MIN_NUM;
+            document.body.append(p);
+        })
+    </script>
+</body>
+</html>

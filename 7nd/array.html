@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        const container = document.getElementById("container")
+        const array = ["토마토","가지","고추","고구마","들깨"];
+        array.forEach(function(item){
+            console.log(item);
+        });
+
+        let result = array.map(function(item){
+            const h2 = document.createElement("h2");
+            h2.textContent = `맛있는 ${item}`;
+            container.append(h2);
+            return h2;
+        })
+        console.log(result);
+
+
+        result = array.filter(function(){
+            return false;
+        })
+        console.log(result);
+
+        result = array.filter(function(){
+            return true;
+        })
+        console.log(result);
+
+        result = array.filter(function(item){
+            return item.length === 2;
+        })
+        console.log(result);
+
+        result = array.filter(function(item){
+            return item.indexOf('고') !== -1;
+        })
+        console.log(result);
+
+
+    </script>
+</body>
+</html>
